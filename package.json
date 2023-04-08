@@ -1,0 +1,12 @@
+{
+  "name": "clay-tablet",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:danielmelogpi/clay-tablet.git",
+  "author": "Daniel Melo <daniel.melo.gpi@clevertech.biz>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "be"
+  ]
+}
