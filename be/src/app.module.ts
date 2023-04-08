@@ -7,18 +7,20 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { ProjectResolver } from './project/project.resolver';
 import { PortfolioModule } from './portfolio/portfolio.module';
+import { PriceTimelineModule } from './price-timeline/price-timeline.module';
 
 @Module({
   imports: [
-    ProjectModule,
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       playground: true,
-      autoSchemaFile: true,
+      autoSchemaFile: true
     }),
+    ProjectModule,
     PortfolioModule,
+    PriceTimelineModule
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService]
 })
 export class AppModule {}
