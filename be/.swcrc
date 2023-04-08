@@ -16,7 +16,10 @@
       "decoratorMetadata": true
     },
     "keepClassNames": true,
-    "baseUrl": "./"
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
   "minify": false
 }

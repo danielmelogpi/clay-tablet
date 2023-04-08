@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { PortfolioModule } from '../portfolio/portfolio.module';
+import { PortfolioModule } from '@/portfolio/portfolio.module';
 import { ProjectResolver } from './project.resolver';
 import { ProjectService } from './project.service';
 
