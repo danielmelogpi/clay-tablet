@@ -14,3 +14,5 @@ Stack being used:
 Draft:
 
 > Clay Tablet allows you to track your investments with the same durability and long-lasting record keeping as the ancient Mesopotamians.
+
+![](./static/clay-tablet.png)
