@@ -6,6 +6,7 @@ import { ProjectModule } from './project/project.module';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { ProjectResolver } from './project/project.resolver';
+import { PortfolioModule } from './portfolio/portfolio.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { ProjectResolver } from './project/project.resolver';
       playground: true,
       autoSchemaFile: true,
     }),
+    PortfolioModule,
   ],
   controllers: [AppController],
   providers: [AppService],
