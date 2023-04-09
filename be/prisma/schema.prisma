@@ -35,6 +35,8 @@ model Investment {
   priceIndexer    PriceIndexer @relation(fields: [priceIndexerId], references: [id])
   startDate       DateTime     @default(now()) @db.Timestamptz()
   liquidationDate DateTime?    @db.Timestamptz()
+  quantity        Float
+  price           Float
 
   @@map("investment")
 }

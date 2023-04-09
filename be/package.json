@@ -11,7 +11,7 @@
     "build:legacy": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "setup": "prisma generate",
-    "start": "yarn build; yarn build:swc:watch & nodemon --exitcrash dist/main",
+    "start": "clear; yarn build; yarn build:swc:watch & nodemon dist/main",
     "start:legacy": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",

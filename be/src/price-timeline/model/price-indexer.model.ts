@@ -8,7 +8,11 @@ export class PriceIndexerModel {
   @Field()
   id: string;
   @Field()
+  code: string;
+  @Field()
   name: string;
+  @Field(() => String)
+  type: 'stock';
   @Field(() => Int)
   currentEpoc: number;
   @Field(() => String)

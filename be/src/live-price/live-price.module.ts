@@ -4,6 +4,7 @@ import { AlfaVantageProviderService } from './alfa-vantage.provider.ts/alfa-vant
 import { LivePriceResolver } from './live-price.resolver';
 
 @Module({
-  providers: [LivePriceService, AlfaVantageProviderService, LivePriceResolver]
+  providers: [LivePriceService, AlfaVantageProviderService, LivePriceResolver],
+  exports: [LivePriceService]
 })
 export class LivePriceModule {}

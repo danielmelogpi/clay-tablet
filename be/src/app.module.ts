@@ -11,6 +11,7 @@ import { PriceTimelineModule } from './price-timeline/price-timeline.module';
 import { DatabaseModule } from './database/database.module';
 import { LivePriceModule } from './live-price/live-price.module';
 import { ConfigModule } from '@nestjs/config';
+import { MapperModule } from './mapper/mapper.module';
 
 @Module({
   imports: [
@@ -26,7 +27,8 @@ import { ConfigModule } from '@nestjs/config';
     PortfolioModule,
     PriceTimelineModule,
     DatabaseModule,
-    LivePriceModule
+    LivePriceModule,
+    MapperModule
   ],
   controllers: [AppController],
   providers: [AppService]
