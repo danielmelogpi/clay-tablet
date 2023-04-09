@@ -9,6 +9,8 @@ import { ProjectResolver } from './project/project.resolver';
 import { PortfolioModule } from './portfolio/portfolio.module';
 import { PriceTimelineModule } from './price-timeline/price-timeline.module';
 import { DatabaseModule } from './database/database.module';
+import { LivePriceModule } from './live-price/live-price.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
@@ -17,10 +19,14 @@ import { DatabaseModule } from './database/database.module';
       playground: true,
       autoSchemaFile: true
     }),
+    ConfigModule.forRoot({
+      isGlobal: true
+    }),
     ProjectModule,
     PortfolioModule,
     PriceTimelineModule,
-    DatabaseModule
+    DatabaseModule,
+    LivePriceModule
   ],
   controllers: [AppController],
   providers: [AppService]
