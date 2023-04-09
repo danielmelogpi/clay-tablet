@@ -1,0 +1,48 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model PriceIndexer {
+  id         String       @id() @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  code       String       @unique @db.VarChar()
+  name       String       @db.VarChar()
+  PriceEntry PriceEntry[]
+  Investment Investment[]
+
+  @@map("price_indexer")
+}
+
+model PriceEntry {
+  id             String       @id() @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  priceIndexerId String       @db.Uuid
+  priceIndexer   PriceIndexer @relation(fields: [priceIndexerId], references: [id])
+  price          Float        @db.DoublePrecision
+
+  @@map("price_entry")
+}
+
+model Investment {
+  id              String       @id() @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  priceIndexerId  String       @db.Uuid()
+  priceIndexer    PriceIndexer @relation(fields: [priceIndexerId], references: [id])
+  startDate       DateTime     @default(now()) @db.Timestamptz()
+  liquidationDate DateTime?    @db.Timestamptz()
+
+  @@map("investment")
+}
+
+model Project {
+  id      String   @id() @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  name    String   @db.VarChar()
+  dueDate DateTime @db.Timestamptz()
+
+  @@map("project")
+}

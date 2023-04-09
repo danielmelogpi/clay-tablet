@@ -1,0 +1,6 @@
+-- AlterTable
+ALTER TABLE "price_indexer" ALTER COLUMN "code" SET DATA TYPE VARCHAR,
+ALTER COLUMN "name" SET DATA TYPE VARCHAR;
+
+-- AlterTable
+ALTER TABLE "project" ALTER COLUMN "name" SET DATA TYPE VARCHAR;
